@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Line Equation solve</title>
+</head>
+<body>
+    <script>
+    
+        let x1 = parseFloat(prompt("Enter x1:"));
+        let y1 = parseFloat(prompt("Enter y1:"));
+        let x2 = parseFloat(prompt("Enter x2:"));
+        let y2 = parseFloat(prompt("Enter y2:"));
+
+        
+
+            let m = (y2 - y1) / (x2 - x1);
+
+    
+            let b = y1 - m * x1;
+
+            
+            let equation = `y = ${m}x + ${b}`;
+
+            
+            alert("Equation  is: " + equation);
+            console.log("Equation  is: " + equation);
+         
+    </script>
+</body>
+</html>

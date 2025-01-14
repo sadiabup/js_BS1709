@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <title> Calculate X </title>
+<head>
+    
+</head>
+<body>
+    <script>
+        
+        let a = parseFloat(prompt("Enter  a:"));
+        let b = parseFloat(prompt("Enter  b:"));
+        let c = parseFloat(prompt("Enter c:"));
+
+        //  x
+        if (b === c) {
+            alert("Error");
+            console.error("Div by zero error."); // error to the console
+        } else {
+            let x = a / (b - c);
+            alert(" x is: (" + x + ")");
+            console.log(" x is: (" + x + ")");
+        }
+    </script>
+</body>
+</html>
+

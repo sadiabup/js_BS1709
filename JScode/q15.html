@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>Prime</head>
+    <body>
+        <script>
+            function isPrime(num) {
+  if (num <= 1) return 0; 
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return 0; 
+    }
+  }
+  return 1; 
+}
+let Input = prompt("Enter:");
+let num = parseInt(Input);
+
+if (isNaN(num)) {
+    alert("Error");
+  console.log("Error");
+} else {
+    alert(isPrime(num));
+  console.log(isPrime(num));
+}
+
+        </script>
+    </body>
+</html>

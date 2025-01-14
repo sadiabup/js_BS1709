@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solve Equation</title>
+</head>
+<body>
+    <script>
+        
+        let a = parseFloat(prompt("Enter coefficient a:"));
+        let b = parseFloat(prompt("Enter coefficient b:"));
+        let c = parseFloat(prompt("Enter constant c:"));
+
+        
+        if (a === 0 && b === 0 && c !== 0) {
+            alert("No solution");
+            console.log("No solution");
+        } 
+    
+        else if (a === 0) {
+            if (b !== 0) {
+                let x = -c / b;
+                alert("x = " + x);
+                console.log(" x = " + x);
+            } 
+        } 
+        
+        else {
+            let determinant = b * b - 4 * a * c;
+
+            if (determinant < 0) {
+                alert("Roots are imaginary");
+                console.log("Roots are imaginary");
+            } else if (determinant === 0) {
+                let x = -b / (2 * a);
+                alert("x = " + x);
+                console.log(" x = " + x);
+            } else {
+                let root1 = (-b + Math.sqrt(determinant)) / (2 * a);
+                let root2 = (-b - Math.sqrt(determinant)) / (2 * a);
+                alert(" x1 = " + root1 + ", x2 = " + root2);
+                console.log(" x1 = " + root1 + ", x2 = " + root2);
+            }
+        }
+    </script>
+</body>
+</html>

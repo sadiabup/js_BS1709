@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Solve Two Equation</title>
+</head>
+<body>
+    <script>
+        
+        let a1 = parseFloat(prompt("Enter a1:"));
+        let b1 = parseFloat(prompt("Enter b1:"));
+        let c1 = parseFloat(prompt("Enter c1:"));
+        let a2 = parseFloat(prompt("Enter a2:"));
+        let b2 = parseFloat(prompt("Enter b2:"));
+        let c2 = parseFloat(prompt("Enter c2:"));
+
+        
+        let det = (a1 * b2) - (a2 * b1);
+
+        
+        if (det == 0) {
+            alert("No solution");
+            console.log("No solution");
+        } else {
+            
+            let x = ((c1 * b2) - (c2 * b1)) / det;
+            let y = ((a1 * c2) - (a2 * c1)) / det;
+
+            
+            alert(`Solution: (${x}, ${y})`);
+            console.log(`Solution: (${x}, ${y})`);
+        }
+    </script>
+</body>
+</html>

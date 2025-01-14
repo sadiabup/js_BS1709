@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Recursive Series Calculation</title>
+    
+</head>
+<body>
+    
+    <input type="number" id="numberInput" min="1" value="5" />
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+         
+        function sumSeries(n) {
+            if (n === 1) {
+                return 1; 
+            }
+            return n + sumSeries(n - 1);
+        }
+
+        
+        function sumOfSquares(n) {
+            if (n === 1) {
+                return 1; 
+            }
+            return (n * n) + sumOfSquares(n - 1); 
+        }
+
+        
+        function generateSeriesString(n) {
+            let series = [];
+            for (let i = 1; i <= n; i++) {
+                series.push(i);
+            }
+            return series.join(" + ");
+        }
+
+
+        function generateSquaresString(n) {
+            let series = [];
+            for (let i = 1; i <= n; i++) {
+                series.push(`${i}^2`);
+            }
+            return series.join(" + ");
+        }
+        function calculate() {
+            const n = parseInt(document.getElementById("numberInput").value);
+
+            if (n < 1 || isNaN(n)) {
+                document.getElementById("result").innerHTML = `<p>Please enter a valid positive number!</p>`;
+                return;
+            }
+
+            const seriesString = `[${generateSeriesString(n)}] = ${sumSeries(n)}`;
+            const squaresString = `[${generateSquaresString(n)}] = ${sumOfSquares(n)}`;
+
+            document.getElementById("result").innerHTML = `
+                <p><strong>Sum of Series:</strong> ${seriesString}</p>
+                <p><strong>Sum of Squares:</strong> ${squaresString}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

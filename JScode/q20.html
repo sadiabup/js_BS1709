@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Fibonacci Numbers</title>
+</head>
+<body>
+    <h1>Fibonacci Numbers</h1>
+    
+
+    <input type="number" id="num" placeholder="Enter " />
+
+    <div id="result"></div>
+    
+    <script>
+        function fibonacci(n) {
+            if (n <= 1) {
+                return n; 
+            }
+            return fibonacci(n - 1) + fibonacci(n - 2); 
+        }
+
+       
+        document.getElementById("num").oninput = function() {
+            const n = parseInt(this.value);
+            const resultDiv = document.getElementById("result");
+
+            if (isNaN(n) || n <= 0) {
+                resultDiv.innerHTML = "<p>Please enter a valid positive integer.</p>";
+                return;
+            }
+
+            let fibonacciSeries = [];
+            for (let i = 0; i < n; i++) {
+                fibonacciSeries.push(fibonacci(i)); 
+            }
+
+            resultDiv.innerHTML = `<p>First ${n} Fibonacci numbers: ${fibonacciSeries.join(", ")}</p>`;
+        };
+    </script>
+</body>
+</html>

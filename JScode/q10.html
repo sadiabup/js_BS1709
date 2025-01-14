@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Factorial</title>
+</head>
+<body>
+    <script>
+        
+        let num = parseInt(prompt("Enter num :"));
+        function factorial(x) {
+
+if (x == 0) {
+    return 1;
+}
+else {
+        return x * factorial(x - 1);
+    }
+}  
+if (num >= 0) {
+    const result = factorial(num);
+    alert(`The factorial of ${num} is ${result}`);
+    console.log(`The factorial of ${num} is ${result}`);
+}
+else {
+    alert('Error');
+    console.log('Error');
+}  
+</script>
+</body>
+</html>
